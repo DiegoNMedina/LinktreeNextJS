@@ -1,95 +1,43 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import SocialNetwork from '@/src/components/SocialNetwork'
+import Header from '@/src/components/Header'
+import Footer from '@/src/components/Footer'
+
+const styleContentElement = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: '50px 0',
+}
+
+const styleGlobal = {
+  fontFamily: 'Poppins, sans-serif',
+  color: '#000',
+}
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <main className="container" style={styleGlobal}>
+        <div className="row" style = {styleContentElement}>
+          <Header name="Diego Medina" title="Fullstack Developer" user="@thatguydiegom" image="/assets/me.png" description="I'm a Fullstack Developer, I love to learn new things and I'm always looking for new challenges." />
+
         </div>
-      </div>
+        <div className="row" style = {styleContentElement}>
+          
+          <SocialNetwork image="/assets/github-mark.webp" name="Github" link="https://github.com/DiegoNMedina" />
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <SocialNetwork image="/assets/twitter-logo.webp" name="Twitter" link="https://twitter.com/?lang=es"/> 
+          {/* Facebook */}
+          <SocialNetwork image="/assets/facebook-logo.png" name="Facebook" link="https://www.facebook.com/diego.n.medina.1" />
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          <SocialNetwork image="/assets/website.png" name="Website" link="https://diego-medina.com" />
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+          <SocialNetwork image="/assets/linkedin-logo.webp" name="Linkedin" link="https://www.linkedin.com/in/diego-medina-0b0b0b1b0/" />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+          <SocialNetwork image="/assets/mail-logo.webp" name="Email" link="mailto:hello@diego-medina.com" />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <Footer icon="©" description=" Diego Medina. All rights reserved"/>
+        </div>
+      </main>
   )
 }
